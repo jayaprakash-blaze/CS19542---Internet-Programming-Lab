@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Book a Flight</h2>
+        <form id="bookingForm">
+            <label for="departure">Departure City:</label>
+            <input type="text" id="departure" required>
+            <label for="destination">Destination City:</label>
+            <input type="text" id="destination" required>
+            <label for="date">Date of Travel:</label>
+            <input type="date" id="date" required>
+            <button type="submit">Book Flight</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("bookingForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            // Add booking logic here
+            window.location.href = 'schedule.html'; // Redirect to flight schedule page
+        });
+    </script>
+</body>
+</html>

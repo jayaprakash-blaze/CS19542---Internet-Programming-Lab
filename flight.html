@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Schedule</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Flight Schedule</h2>
+        <p>Your selected date: <span id="selectedDate"></span></p>
+        <ul id="flightList">
+            <!-- Flight schedule will be populated here -->
+        </ul>
+    </div>
+
+    <script>
+        // Example flight schedule data
+        const flightData = [
+            { flight: 'AI-101', time: '10:00 AM', status: 'On Time' },
+            { flight: 'AI-102', time: '12:00 PM', status: 'Delayed' },
+            { flight: 'AI-103', time: '02:00 PM', status: 'On Time' }
+        ];
+
+        // Display selected travel date
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedDate = urlParams.get('date');
+        document.getElementById('selectedDate').textContent = selectedDate;
+
+        // Populate flight schedule
+        const flightList = document.getElementById('flightList');
+        flightData.forEach(flight => {
+            const li = document.createElement('li');
+            li.textContent = `${flight.flight} - ${flight.time} - ${flight.status}`;
+            flightList.appendChild(li);
+        });
+    </script>
+</body>
+</html>
